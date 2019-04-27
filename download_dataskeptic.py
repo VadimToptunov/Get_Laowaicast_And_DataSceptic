@@ -5,6 +5,11 @@ import requests
 from selenium import webdriver
 import time
 
+"""
+Small script to download all episodes of DataSceptic podcast.
+"""
+
+
 browser = webdriver.Chrome(r".\chromedriver.exe")
 
 

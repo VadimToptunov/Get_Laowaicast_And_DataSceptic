@@ -3,6 +3,10 @@ import re
 import requests
 import os
 
+"""
+Small script to download all episodes of Laowaicast podcast.
+"""
+
 
 def grab_podcast_urls():
     pod_links = []
