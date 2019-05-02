@@ -62,71 +62,83 @@ class GetPods:
         [1] Intermediate French \n
         """
         downloader = pdw.PodcastDownloader()
+        datasceptic_attributes = self.datasceptic_attributes
+        laowaicast_attributes = self.laowaicast_attributes
+        learningmachines_attributes = self.learningmachines_attributes
 
-        if user_answer == "0":
-            answer = input(f"{text0}{data_science}")
-            if answer == "0":
-                self.get_pfm(downloader, "superdatascience")
+        try:
+            if user_answer == "0":
+                answer = input(f"{text0}{data_science}")
+                if answer == "0":
+                    self.get_pfm(downloader, "superdatascience")
+                else:
+                    print("Sorry, wrong number!")
+            elif user_answer == "1":
+                answer = input(f"{text0}{data_science_machine_learning}")
+                if answer == "0":
+                    downloader.grab_dataskeptic_urls(2014, 2020, 1, datasceptic_attributes)
+                elif answer == "1":
+                    downloader.grab_podcast_urls("learningmachines101", "https://www.learningmachines101.com/",
+                                                 2014, 2020, 1, learningmachines_attributes)
+                else:
+                    print("Sorry, wrong number!")
+            elif user_answer == "2":
+                answer = input(f"{text0}{french}")
+                if answer == "0":
+                    self.get_pfm(downloader, "learn-french-by-podcast")
+                elif answer == "1":
+                    self.get_pfm(downloader, "intermediate-french-podcast-2360552")
+                else:
+                    print("Sorry, wrong number!")
+            elif user_answer == "3":
+                answer = input(f"{text0}{laowaicast}")
+                if answer == "0":
+                    downloader.grab_podcast_urls("laowaicast", "https://laowaicast.ru/category/episode/page/",
+                                                 25, 1, -1, laowaicast_attributes)
+                else:
+                    print("Sorry, wrong number!")
+            elif user_answer == "4":
+                answer = input(f"{text0}{python}")
+                if answer == "0":
+                    self.get_pfm(downloader, "talk-python-to-me-python-conversations-for-passionate-developers-83399")
+                elif answer == "1":
+                    self.get_pfm(downloader, "the-python-podcast-init")
+                elif answer == "2":
+                    self.get_pfm(downloader, "python-bytes")
+                elif answer == "3":
+                    self.get_pfm(downloader, "import-this")
+                else:
+                    print("Sorry, wrong number!")
+            elif user_answer == "5":
+                answer = input(f"{text0}{qa}")
+                if answer == "0":
+                    self.get_pfm(downloader, "qa-guild-podcast")
+                elif answer == "1":
+                    self.get_pfm(downloader, "radio-qa")
+                elif answer == "2":
+                    self.get_pfm(downloader, "test-code-software-testing-development-python")
+                else:
+                    print("Sorry, wrong number!")
+            elif user_answer == "6":
+                answer = input(f"{text0}{java_scala}")
+                if answer == "0":
+                    self.get_pfm(downloader, "scalalaz-podcast-2149521")
+                elif answer == "1":
+                    self.get_pfm(downloader, "series-2467644")
+                else:
+                    print("Sorry, wrong number!")
             else:
                 print("Sorry, wrong number!")
-        elif user_answer == "1":
-            answer = input(f"{text0}{data_science_machine_learning}")
-            if answer == "0":
-                downloader.grab_dataskeptic_urls(2014, 2020, 1, self.datasceptic_attributes)
-            elif answer == "1":
-                downloader.grab_podcast_urls("learningmachines101", "https://www.learningmachines101.com/",
-                                                        2014, 2020, 1, self.learningmachines_attributes)
-            else:
-                print("Sorry, wrong number!")
-        elif user_answer == "2":
-            answer = input(f"{text0}{french}")
-            if answer == "0":
-                self.get_pfm(downloader, "learn-french-by-podcast")
-            elif answer == "1":
-                self.get_pfm(downloader, "intermediate-french-podcast-2360552")
-            else:
-                print("Sorry, wrong number!")
-        elif user_answer == "3":
-            answer = input(f"{text0}{laowaicast}")
-            if answer == "0":
-                downloader.grab_podcast_urls("laowaicast", "https://laowaicast.ru/category/episode/page/",
-                                                        25, 1, -1, self.laowaicast_attributes)
-            else:
-                print("Sorry, wrong number!")
-        elif user_answer == "4":
-            answer = input(f"{text0}{python}")
-            if answer == "0":
-                self.get_pfm(downloader, "talk-python-to-me-python-conversations-for-passionate-developers-83399")
-            elif answer == "1":
-                self.get_pfm(downloader, "the-python-podcast-init")
-            elif answer == "2":
-                self.get_pfm(downloader, "python-bytes")
-            elif answer == "3":
-                self.get_pfm(downloader, "import-this")
-            else:
-                print("Sorry, wrong number!")
-        elif user_answer == "5":
-            answer = input(f"{text0}{qa}")
-            if answer == "0":
-                self.get_pfm(downloader, "qa-guild-podcast")
-            elif answer == "1":
-                self.get_pfm(downloader, "radio-qa")
-            elif answer == "2":
-                self.get_pfm(downloader, "test-code-software-testing-development-python")
-            else:
-                print("Sorry, wrong number!")
-        elif user_answer == "6":
-            answer = input(f"{text0}{java_scala}")
-            if answer == "0":
-                self.get_pfm(downloader, "scalalaz-podcast-2149521")
-            elif answer == "1":
-                self.get_pfm(downloader, "series-2467644")
-            else:
-                print("Sorry, wrong number!")
-        else:
-            print("Sorry, wrong number!")
+        except ():
+            print("Sorry, No connection to episode, please, try to download it later!")
 
     def get_pfm(self, downloader, podname):
+        """
+        Connects to player FM and gets download URLs.
+        :param downloader:
+        :param podname:
+        :return:
+        """
         downloader.grab_podcast_urls_pfm(podname)
 
 

@@ -1,4 +1,5 @@
 from Downloader import GetPods
+from Downloader import PodcastDownloader
 
 
 def run_downloader():
@@ -9,3 +10,4 @@ def run_downloader():
 if __name__ == "__main__":
     run_downloader()
     print("End of parsing!")
+    PodcastDownloader.PodcastDownloader.browser.quit()
