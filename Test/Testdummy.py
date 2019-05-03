@@ -1,6 +1,7 @@
 from Downloader import PodcastDownloader as pdw
 from os import path
 import time
+import shutil
 
 
 class TestDummy:
@@ -11,16 +12,23 @@ class TestDummy:
 
     def test_create_directory_for_files(self, podlinks, podname):
         self.downloader(podlinks, podname)
-        assert path.isdir(f".\\{podname}_podcasts")
+        directory = f".\\{podname}_podcasts"
+        assert path.isdir(directory)
+        self.clean(directory)
 
     def test_downloading_files(self, podlinks, podname, filename):
         self.downloader(podlinks, podname)
-        assert path.isfile(f".\\{podname}_podcasts\\{filename}")
+        directory = f".\\{podname}_podcasts"
+        assert path.isfile(f".\\{directory}\\{filename}")
+        self.clean(directory)
 
     def downloader(self, pod_links, pod_name):
         pdw0 = pdw.PodcastDownloader()
         pdw0.downloader(pod_links, pod_name)
         time.sleep(10)
+
+    def clean(self, directory):
+        shutil.rmtree(directory)
 
 
 
