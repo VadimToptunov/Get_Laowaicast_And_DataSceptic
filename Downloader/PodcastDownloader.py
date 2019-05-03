@@ -3,14 +3,15 @@ import re
 import requests
 from selenium import webdriver
 import time
-from torrequest import TorRequest
+# from torrequest import TorRequest
 import os
 
 
 class PodcastDownloader:
 
-    # browser = webdriver.Chrome(r".\chromedriver.exe")
-    # browser.set_window_position(-2000, 0)
+    path = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe"
+    browser = webdriver.Chrome(executable_path=path)
+    browser.set_window_position(-2000, 0)
 
     def grab_podcast_urls(self, podname, episodes_link, minrange, maxrange, step, attributes):
         """
@@ -30,7 +31,7 @@ class PodcastDownloader:
         :param attributes:
         :return:
         """
-        browser = webdriver.Chrome(r".\chromedriver.exe")
+        browser = webdriver.Chrome()
         self.browser = browser
         browser.set_window_position(-2000, 0)
         for item in range(minrange, maxrange, step):
@@ -49,7 +50,7 @@ class PodcastDownloader:
         url = f"https://player.fm/series/{podname}"
         self.browser.get(url)
         time.sleep(30)
-        self.grab_links(podname, url, {'href': re.compile("http.*\.mp3")})
+        self.grab_links(podname, url, {'href': re.compile(r"http.*\.mp3")})
         self.browser.quit()
 
     def grab_links(self, podname, url, attributes):
@@ -60,6 +61,18 @@ class PodcastDownloader:
         :param attributes:
         :return:
         """
+        pod_links = self.grabbing_links(url, attributes)
+        self.downloader(pod_links, podname)
+
+    def downloader(self, pod_links, podname):
+        for url_pod in pod_links:
+            try:
+                dirname = f".\\{podname}_podcasts"
+                self.download_podcast(dirname, url_pod)
+            except():
+                print("Sorry. download attempt failed! Please, try later.")
+
+    def grabbing_links(self, url, attributes):
         pod_links = []
         page = requests.get(url)
         data = page.text
@@ -70,13 +83,7 @@ class PodcastDownloader:
             link = _.get('href')
             print(link)
             pod_links.append(link)
-
-        for url_pod in pod_links:
-            try:
-                dirname = f".\\{podname}_podcasts"
-                self.download_podcast(dirname, url_pod)
-            except():
-                print("Sorry. download attempt failed! Please, try later.")
+        return pod_links
 
     def download_podcast(self, dirname, url_pod):
         """
