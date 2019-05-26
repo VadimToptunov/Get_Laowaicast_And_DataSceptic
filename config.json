@@ -1,0 +1,212 @@
+{
+"text": "Hello, user! You are going to download a podcast. Which topic would you like to choose?",
+"topics": [ 
+			{
+                "name": "[0] Business & Finance", 
+				"podcasts": [ 
+							  {
+							    "podcast_name": "Because Money Podcast",
+								"podcast_url": "https://player.fm/series/because-money-podcast",
+								"mp3_regexp": "http.*\\.mp3"
+							  },
+				
+							  {
+								"podcast_name": "Build Wealth Canada Podcast",
+								"podcast_url": "https://player.fm/series/build-wealth-canada-podcast-personal-finance-mastery",
+								"mp3_regexp": "http.*\\.mp3"
+				              },
+							  
+							  {
+								"podcast_name": "Simple Money Podcast",
+								"podcast_url": "https://player.fm/series/simple-money-podcast-canadian-personal-finance",
+								"mp3_regexp": "http.*\\.mp3"
+							  },
+
+							  {
+								"podcast_name": "Simple Money Solutions",
+								"podcast_url": "https://player.fm/series/simple-money-solutions-personal-finance-canada-personal-finance-from-a-canadian-perspective-financial-independence-lifestyle-choices-early-retirement",
+								"mp3_regexp": "http.*\\.mp3"
+							  },
+							  
+							  {
+								"podcast_name": "Startup Canada",
+								"podcast_url": "https://player.fm/series/finance-podcast-startup-canada",
+								"mp3_regexp": "http.*\\.mp3"
+							  },
+							  
+							  {
+								"podcast_name": "Startup Canada Podcast: Canada's Entrepreneurship Podcast",
+								"podcast_url": "https://player.fm/series/series-2382137",
+								"mp3_regexp": "http.*\\.mp3"
+							  },
+							  
+							  { 
+							    "podcast_name": "Thrive Podcast",
+							    "podcast_url": "https://player.fm/series/thrive-podcast-startup-canada-2382053",
+								"mp3_regexp": "http.*\\.mp3"
+							  }
+				            ]
+				
+            },
+			
+			{
+				"name": "[1] Data Science", 
+				"podcasts": [ 
+				                { "podcast_name": "Data Skeptic",
+								  "podcast_url": "https://dataskeptic.com/podcast?year=",
+								  "min_year": "2014",
+								  "max_year": "2019",
+								  "mp3_regexp": "^(http|https)://traffic.libsyn.com/*"
+								},
+								
+								{
+								  "podcast_name": "Learning Machines 101",
+								  "podcast_url": "https://www.learningmachines101.com/",
+								  "min_year": "2014",
+								  "max_year": "2019",
+									"step": 1,
+								  "mp3_regexp": "^(http|https)://traffic.libsyn.com/*",
+								  "title": "Download"
+								},
+				
+								{ "podcast_name": "Super Data Science",
+							    "podcast_url": "https://player.fm/series/superdatascience",
+								"mp3_regexp": "http.*\\.mp3"
+							    }
+							]
+			},
+			
+			{
+				"name": "[2] French",
+				"podcasts": [
+								{
+								  "podcast_name": "Intermediate French",
+								  "podcast_url": "https://player.fm/series/intermediate-french-podcast-2360552",
+								  "mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "Learn French By Podcast",
+								  "podcast_url": "https://player.fm/series/learn-french-by-podcast",
+								  "mp3_regexp": "http.*\\.mp3"
+								}
+				            ]
+			},
+			
+			{
+				"name": "[3] Java & Scala",
+				"podcasts" : [
+								{
+									"podcast_name": "Razbor Poletov",
+									"podcast_url": "https://player.fm/series/series-2467644",
+									"mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "Scalalaz",
+								  "podcast_url": "https://player.fm/series/scalalaz-podcast-2149521",
+								  "mp3_regexp": "http.*\\.mp3"
+								}
+							 ]
+			}, 
+			
+			{
+				"name": "[4] Laowaicast",
+				"podcasts": [
+								{
+								 "podcast_name": "Laowaicast",
+								  "podcast_url": "https://laowaicast.ru/category/episode/page/",
+								  "min_page": "1",
+								  "max_page": "30",
+									"step": -1,
+								  "mp3_regexp": "^(http|https)://media.*",
+								  "title": "Скачать"
+								}
+							]
+			},
+			
+			{
+				"name": "[5] Marketing",
+				"podcasts": [
+								{
+								 "podcast_name": "Marketing Jam",
+								  "podcast_url": "https://player.fm/series/marketing-jam",
+								  "mp3_regexp": "http.*\\.mp3"
+								}
+							]
+			},
+			
+			{
+				"name": "[6] Python",
+				"podcasts": [
+								{
+								 "podcast_name": "Import This",
+								  "podcast_url": "https://player.fm/series/import-this",
+								  "mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "Python Bytes",
+								  "podcast_url": "https://player.fm/series/python-bytes",
+								  "mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "Talk Python To Me",
+								  "podcast_url": "https://player.fm/series/talk-python-to-me-python-conversations-for-passionate-developers-83399",
+								  "mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "The Python podcast.__init__",
+								  "podcast_url": "https://player.fm/series/the-python-podcast-init",
+								  "mp3_regexp": "http.*\\.mp3"
+								}
+							]
+			},
+			
+			{
+				"name": "[7] QA",
+				"podcasts": [
+								{
+								  "podcast_name": "QA Guild",
+								  "podcast_url": "https://player.fm/series/qa-guild-podcast",
+								  "mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "Radio QA",
+								  "podcast_url": "https://player.fm/series/radio-qa",
+								  "mp3_regexp": "http.*\\.mp3"
+								},
+								
+								{
+								  "podcast_name": "Test and Code",
+								  "podcast_url": "https://player.fm/series/test-code-software-testing-development-python",
+								  "mp3_regexp": "http.*\\.mp3"
+								}
+				            ]
+			},
+			
+			{
+				"name": "[8] Miscelanious",
+				"podcasts": [
+								{
+								  "podcast_name": "DevZen",
+								  "podcast_url": "https://download.devzen.ru/",
+								  "min_year": "2014",
+								  "max_year": "2019",
+									"step": 1,
+								  "mp3_regexp": "*.mp3"
+								},
+							
+								{
+								  "podcast_name": "Крит Мышь",
+								  "podcast_url": "https://critmouse.ru/episodes/",
+								  "mp3_regexp": "^(http|https)://media.*",
+								  "title": "Скачать"
+								}
+							]
+			} 
+		]
+}

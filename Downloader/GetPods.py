@@ -2,6 +2,11 @@ import Downloader.PodcastDownloader as pdw
 import re
 
 
+"""
+TO DO: Rewrite the code to get all data from config.json and then define which method is neede to download the podcast.
+"""
+
+
 class GetPods:
     media = re.compile("^(http|https)://media.*")
     libsyn = re.compile("^(http|https)://traffic.libsyn.com/*")
